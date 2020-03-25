@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.xml.ws.RequestWrapper;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +26,7 @@ public class CoronaVirusStatController {
     @RequestMapping(value="/general-stats",method = RequestMethod.GET)
     public ResponseEntity<?> getGeneralStats() {
         try{
+        	System.out.println("solicitud realizada ");
             List<Country> countries = coronaVirusStatServices.getGeneralStats();
             return new ResponseEntity<>(countries, HttpStatus.OK);
         }

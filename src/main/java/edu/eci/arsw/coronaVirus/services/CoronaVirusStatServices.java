@@ -7,6 +7,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import edu.eci.arsw.coronaVirus.model.Country;
 import edu.eci.arsw.coronaVirus.model.Province;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 
@@ -26,6 +27,7 @@ import java.net.URLEncoder;
 
 
 @Service
+@Configuration
 public class CoronaVirusStatServices {
     @Autowired
     HttpConnectionService httpConnectionService=null;
@@ -39,13 +41,13 @@ public class CoronaVirusStatServices {
         for(Province pr: listaProvinces){
             if(!countries.containsKey(pr.getCountry())){
                 ArrayList<Integer> temp = new ArrayList<Integer>();
-                temp.add(pr.getDeaths());temp.add(pr.getConfirmed());temp.add(pr.getRecovered());
+                temp.add(pr.getDeaths());temp.add(pr.getInfected());temp.add(pr.getCured());
                 countries.put(pr.getCountry(),temp);
             }else{
                 ArrayList<Integer> aux = new ArrayList<Integer>();
                 ArrayList<Integer> temp = countries.get(pr.getCountry());
                 countries.remove(pr.getCountry());
-                aux.add(temp.get(0)+pr.getDeaths());aux.add(temp.get(1)+pr.getConfirmed());aux.add(temp.get(2)+pr.getRecovered());
+                aux.add(temp.get(0)+pr.getDeaths());aux.add(temp.get(1)+pr.getInfected());aux.add(temp.get(2)+pr.getCured());
                 countries.put(pr.getCountry(),aux);
             }
         }

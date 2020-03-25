@@ -2,15 +2,16 @@ package edu.eci.arsw.coronaVirus.model;
 
 public class Country {
     private String name;
-    private int confirmed;
     private int deaths;
-    private int recovered;
+    private int infected;
+  
+    private int cured;
 
-    public Country(String name,int deaths,int confirmed,int recovered){
+    public Country(String name,int deaths,int infected,int cured){
         this.name=name;
-        this.confirmed=confirmed;
+        this.infected=infected;
         this.deaths=deaths;
-        this.recovered=recovered;
+        this.cured=cured;
     }
 
     public String getName() {
@@ -21,12 +22,12 @@ public class Country {
         this.name = name;
     }
 
-    public int getConfirmed() {
-        return confirmed;
+    public int getInfected() {
+        return infected;
     }
 
-    public void setConfirmed(int confirmed) {
-        this.confirmed = confirmed;
+    public void setInfected(int infected) {
+        this.infected = infected;
     }
 
     public int getDeaths() {
@@ -37,11 +38,11 @@ public class Country {
         this.deaths = deaths;
     }
 
-    public int getRecovered() {
-        return recovered;
+    public int getCured() {
+        return cured;
     }
 
-    public void setRecovered(int recovered) {
-        this.recovered = recovered;
+    public void setCured(int cured) {
+        this.cured = cured;
     }
 }
