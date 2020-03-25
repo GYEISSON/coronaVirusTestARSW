@@ -14,18 +14,19 @@ import java.net.URLEncoder;
 
 @Service
 public class HttpConnectionService {
-    private  static String headerHostValue;
-    private  static String headerKeyValue;
-    private static String url;
-    private static Gson gson;
+    private String headerHostValue;
+    private String headerKeyValue;
+    private String url;
+    private Gson gson;
 
     public HttpConnectionService(){
-        setUrl("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=");
-        setHeaderHostValue("covid-19-coronavirus-statistics.p.rapidapi.com");
-        setHeaderKeyValue("ecd92ce78fmsha41e1754a0b09e1p1b709bjsna4f3e9e91296");
+    	url = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=";
+        headerHostValue = "covid-19-coronavirus-statistics.p.rapidapi.com";
+        headerKeyValue = "9077e18e69mshd0c95d063e40146p183591jsn9f9008035e02";
         setGson(new GsonBuilder().create());
     }
-    public static JSONArray HTTPConnection(String name){
+    
+    public JSONArray HTTPConnection(String name){
         String encodedUrlName = null;
         try {
             encodedUrlName = URLEncoder.encode(name,java.nio.charset.StandardCharsets.UTF_8.toString());
@@ -74,7 +75,7 @@ public class HttpConnectionService {
         this.url = url;
     }
 
-    public static Gson getGson() {
+    public  Gson getGson() {
         return gson;
     }
 

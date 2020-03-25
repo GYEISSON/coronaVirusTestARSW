@@ -6,9 +6,9 @@ public class Province {
     private String country;
     private String lastUpdate;
     private String keyId;
-    private int infected;
+    private int confirmed;
     private int deaths;
-    private int cured;
+    private int recovered;
 
     public Province(){}
 
@@ -52,12 +52,12 @@ public class Province {
         this.keyId = keyId;
     }
 
-    public int getInfected() {
-        return infected;
+    public int getConfirmed() {
+        return confirmed;
     }
 
-    public void setInfected(int infected) {
-        this.infected = infected;
+    public void setConfirmed(int confirmed) {
+        this.confirmed = confirmed;
     }
 
     public int getDeaths() {
@@ -68,11 +68,11 @@ public class Province {
         this.deaths = deaths;
     }
 
-    public int getCured() {
-        return cured;
+    public int getRecovered() {
+        return recovered;
     }
 
-    public void setCured(int cured) {
-        this.cured = cured;
+    public void setRecovered(int cured) {
+        this.recovered = cured;
     }
 }

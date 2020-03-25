@@ -12,9 +12,11 @@ var app = ( function() {
 		var fila =$('#countriesRow');
 		countries.map( function(element){
 			console.log(element);
-			var markup = "<tr> <td>"+ element.name +"</td> <td>"+element.deaths+"</td> <td>"+ element.infected +"</td> <td>"+ element.cured +"</td> </tr>";
+			var markup = "<tr> <td>"+ element.name +"</td> <td>"+element.deaths+"</td> <td>"+ element.confirmed +"</td> <td>"+ element.recovered +"</td> </tr>";
 			fila.append(markup);
-		})
+			
+		});
+		console.log("datosMapeados");
 	}
 	
 	return {
@@ -26,7 +28,3 @@ var app = ( function() {
 })();
 
 app.mostrarTabla();
-console.log("FAIL");
-console.log("FAIL");
-console.log("FAIL");
-console.log("FAIL");
