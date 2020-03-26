@@ -1,4 +1,4 @@
-package edu.eci.arsw.coronaVirus.services;
+package edu.eci.arsw.covid19arsw.services;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

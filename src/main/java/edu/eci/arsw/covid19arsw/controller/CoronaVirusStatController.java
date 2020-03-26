@@ -1,10 +1,10 @@
-package edu.eci.arsw.coronaVirus.controller;
+package edu.eci.arsw.covid19arsw.controller;
 
 
-import edu.eci.arsw.coronaVirus.Covid19arsw;
-import edu.eci.arsw.coronaVirus.model.Country;
-import edu.eci.arsw.coronaVirus.services.CoronaVirusStatException;
-import edu.eci.arsw.coronaVirus.services.CoronaVirusStatServices;
+import edu.eci.arsw.covid19arsw.Covid19arsw;
+import edu.eci.arsw.covid19arsw.model.Country;
+import edu.eci.arsw.covid19arsw.services.CoronaVirusStatException;
+import edu.eci.arsw.covid19arsw.services.CoronaVirusStatServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

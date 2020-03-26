@@ -1,4 +1,4 @@
-package edu.eci.arsw.coronaVirus;
+package edu.eci.arsw.covid19arsw;
 
 import static org.junit.Assert.assertTrue;
 

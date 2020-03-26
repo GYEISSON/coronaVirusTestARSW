@@ -1,29 +1,17 @@
-package edu.eci.arsw.coronaVirus.services;
+package edu.eci.arsw.covid19arsw.services;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.mashape.unirest.http.exceptions.UnirestException;
-import edu.eci.arsw.coronaVirus.model.Country;
-import edu.eci.arsw.coronaVirus.model.Province;
+import edu.eci.arsw.covid19arsw.model.Country;
+import edu.eci.arsw.covid19arsw.model.Province;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.HttpResponse;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.json.JSONArray;
-
-
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 
 @Service
