@@ -11,9 +11,6 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @SpringBootApplication
-@EnableAutoConfiguration
-@ComponentScan
-@Configuration
 public class App 
 {
     public static void main( String[] args )
