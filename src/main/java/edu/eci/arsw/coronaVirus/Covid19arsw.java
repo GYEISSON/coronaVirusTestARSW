@@ -11,11 +11,11 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @SpringBootApplication
-public class App 
+public class Covid19arsw
 {
     public static void main( String[] args )
     {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(Covid19arsw.class, args);
         System.out.println( "Corona Virus 19!" );
     }
 }
