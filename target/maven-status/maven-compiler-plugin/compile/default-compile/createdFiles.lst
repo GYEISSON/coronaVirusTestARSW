@@ -1,8 +1,0 @@
-edu\eci\arsw\coronaVirus\services\CoronaVirusStatServices.class
-edu\eci\arsw\coronaVirus\model\Province.class
-edu\eci\arsw\coronaVirus\services\CoronaVirusStatException.class
-edu\eci\arsw\coronaVirus\App.class
-edu\eci\arsw\coronaVirus\controller\CoronaVirusStatController.class
-edu\eci\arsw\coronaVirus\services\HttpConnectionService.class
-edu\eci\arsw\coronaVirus\services\CoronaVirusStatServices$1.class
-edu\eci\arsw\coronaVirus\model\Country.class

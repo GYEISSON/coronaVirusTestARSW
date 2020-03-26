@@ -1,6 +1,7 @@
 package edu.eci.arsw.coronaVirus.controller;
 
-import edu.eci.arsw.coronaVirus.App;
+
+import edu.eci.arsw.coronaVirus.Covid19arsw;
 import edu.eci.arsw.coronaVirus.model.Country;
 import edu.eci.arsw.coronaVirus.services.CoronaVirusStatException;
 import edu.eci.arsw.coronaVirus.services.CoronaVirusStatServices;
@@ -33,7 +34,7 @@ public class CoronaVirusStatController {
             return new ResponseEntity<>(countries, HttpStatus.OK);
         }
         catch (CoronaVirusStatException covid){
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, covid);
+            Logger.getLogger(Covid19arsw.class.getName()).log(Level.SEVERE, null, covid);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
