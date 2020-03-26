@@ -109,6 +109,11 @@
 
       </plugins>
     </pluginManagement>
+    <resources>
+      <resource>
+        <directory>META-INF</directory>
+      </resource>
+    </resources>
   </build>
   
   <repositories>
@@ -125,4 +130,5 @@
       <url>https://repo.spring.io/milestone</url>
     </pluginRepository>
   </pluginRepositories>
+
 </project>
