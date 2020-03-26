@@ -8,7 +8,7 @@
   <artifactId>covid19arsw</artifactId>
 
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <!-- FIXME change it to the project's website -->
   <url>http://maven.apache.org</url>

@@ -1,6 +1,6 @@
 package edu.eci.arsw.coronaVirus.model;
 
-public class Country {
+public class Country implements Comparable {
     private String name;
     private int deaths;
     private int confirmed;
@@ -44,5 +44,10 @@ public class Country {
 
     public void setCured(int cured) {
         this.recovered = cured;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

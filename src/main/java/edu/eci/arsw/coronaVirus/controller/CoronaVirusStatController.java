@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,6 +29,7 @@ public class CoronaVirusStatController {
         try{
         	System.out.println("solicitud realizada ");
             List<Country> countries = coronaVirusStatServices.getGeneralStats();
+            Collections.sort(countries);
             return new ResponseEntity<>(countries, HttpStatus.OK);
         }
         catch (CoronaVirusStatException covid){
