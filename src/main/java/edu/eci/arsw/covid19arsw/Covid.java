@@ -13,6 +13,6 @@ public class Covid
     public static void main( String[] args )
     {
         SpringApplication.run(Covid.class, args);
-        System.out.println( "Corona Virus 19!" );
+        
     }
 }
