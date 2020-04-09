@@ -1,0 +1,12 @@
+.bg-theme{
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background .3s;
+}
+
+
+body.bg-theme1 {
+    background-image: url(../images/bg-themes/1.png);
+}
