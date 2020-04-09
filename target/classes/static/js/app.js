@@ -10,7 +10,7 @@ var app = ( function() {
 	function createTable(countries){
 		var fila =$('#countriesRow');
 		countries.map( function(element){
-			console.log(element);
+			//console.log(element);
 			var markup = "<tr> <td>"+ element.name +"</td> <td>"+element.deaths+"</td> <td>"+ element.confirmed +"</td> <td>"+ element.recovered +"</td> </tr>";
 			fila.append(markup);
 			
