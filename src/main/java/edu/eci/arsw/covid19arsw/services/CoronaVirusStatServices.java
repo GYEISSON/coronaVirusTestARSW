@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
+
 import org.json.JSONArray;
 
 
@@ -55,10 +55,31 @@ public class CoronaVirusStatServices {
         }
         
         List<Country> listCountries = new ArrayList<Country>();
+
         for (HashMap.Entry<String, ArrayList<Integer>> entry : countries.entrySet()) {
             listCountries.add(new Country(entry.getKey(),entry.getValue().get(0),entry.getValue().get(1),entry.getValue().get(2)));
         }
+        System.out.println(listCountries.get(0).getName());
+        listCountries = sortCountries(listCountries);
+        System.out.println(listCountries.get(0).getName());
 
         return listCountries;
+    }
+
+    private List<Country> sortCountries( List<Country> countries){
+        int swap=1;
+        Country temporalCountry= null;
+        while(swap>0) {
+            swap=0;
+            for (int i = 1; i < countries.size(); i++) {
+                if (countries.get(i).getConfirmed() > countries.get(i - 1).getConfirmed()) {
+                    temporalCountry = countries.get(i - 1);
+                    countries.set(i - 1, countries.get(i));
+                    countries.set(i, temporalCountry);
+                    swap++;
+                }
+            }
+        }
+        return countries;
     }
 }

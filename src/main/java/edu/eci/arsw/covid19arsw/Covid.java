@@ -13,6 +13,5 @@ public class Covid
     public static void main( String[] args )
     {
         SpringApplication.run(Covid.class, args);
-        
     }
 }
