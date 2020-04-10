@@ -27,13 +27,14 @@ public class HttpConnectionService {
     }
     
     public JSONArray HTTPConnection(String name){
+
         String encodedUrlName = null;
         try {
             encodedUrlName = URLEncoder.encode(name,java.nio.charset.StandardCharsets.UTF_8.toString());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-
+        //System.out.println(encodedUrlName);
         StringBuilder apiUrl = new StringBuilder();
         apiUrl.append(url +encodedUrlName);
 

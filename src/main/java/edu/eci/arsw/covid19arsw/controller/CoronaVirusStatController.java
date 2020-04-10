@@ -8,6 +8,7 @@ import edu.eci.arsw.covid19arsw.services.CoronaVirusStatServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,14 +29,26 @@ public class CoronaVirusStatController {
     @RequestMapping(value="/general-stats",method = RequestMethod.GET)
     public ResponseEntity<?> getGeneralStats() {
         try{
-        	System.out.println("solicitud realizada ");
             List<Country> countries = coronaVirusStatServices.getGeneralStats();
-            Collections.sort(countries);
             return new ResponseEntity<>(countries, HttpStatus.OK);
         }
         catch (CoronaVirusStatException covid){
-            Logger.getLogger(Covid.class.getName()).log(Level.SEVERE, null, covid);
+            Logger.getLogger(Covid.class.getName()).log(Level.SEVERE, null, covid.noSeEncontraronDatos);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @RequestMapping(path = "/{country}",method = RequestMethod.GET)
+    public ResponseEntity<?> getCountryStat(@PathVariable ("country") String countryName){
+        try{
+            //System.out.println(countryName);
+            List<Country> country = coronaVirusStatServices.getCountryStat(countryName);
+            //System.out.println(country.size());
+            return new ResponseEntity<>(country, HttpStatus.OK);
+        }catch (CoronaVirusStatException covid){
+            Logger.getLogger(Covid.class.getName()).log(Level.SEVERE, null, covid.noSeEncontraronDatos);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }

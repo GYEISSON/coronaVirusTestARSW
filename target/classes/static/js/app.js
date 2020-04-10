@@ -4,7 +4,6 @@ var app = ( function() {
        
 	    $('#table tbody').empty();	    
 		apiclient.getCountries();
-        
 	}
 	
 	function createTable(countries){
@@ -17,9 +16,14 @@ var app = ( function() {
 		});
 		console.log("datosMapeados");
 	}
-	
+	function mostrarCountry(country) {
+		console.log("buscando pais");
+		$('#table tbody').empty();
+		apiclient.getCountry(country);
+	}
 	return {
 		mostrarTabla:mostrarTabla,
+		mostrarCountry:mostrarCountry,
 		createTable:createTable
 	}
 		

@@ -25,12 +25,14 @@ public class CoronaVirusStatServices {
     public List<Country> getGeneralStats() throws CoronaVirusStatException {
 
         JSONArray stats = httpConnectionService.HTTPConnection("");
+
         List<Province> listaProvinces = httpConnectionService.getGson()
         													.fromJson(stats.toString(),new TypeToken<List<Province>>(){}.getType());
+
         HashMap<String, ArrayList<Integer>> countries=new HashMap<String, ArrayList<Integer>>();
         
         for(Province p: listaProvinces){
-            //System.out.println( p.getCountry()  + " " + p.getDeaths()+ " "+p.getConfirmed() +" "+p.getRecovered() );
+
         	if( !countries.containsKey(p.getCountry()) ){
                 
             	ArrayList<Integer> temp = new ArrayList<Integer>();
@@ -41,7 +43,7 @@ public class CoronaVirusStatServices {
                 
                 countries.put(p.getCountry(),temp);
             }else{
-                //System.out.println("sumando");
+
             	ArrayList<Integer> aux = new ArrayList<Integer>();
                 ArrayList<Integer> temp = countries.get(p.getCountry());
                 
@@ -56,12 +58,58 @@ public class CoronaVirusStatServices {
         
         List<Country> listCountries = new ArrayList<Country>();
 
+
         for (HashMap.Entry<String, ArrayList<Integer>> entry : countries.entrySet()) {
             listCountries.add(new Country(entry.getKey(),entry.getValue().get(0),entry.getValue().get(1),entry.getValue().get(2)));
         }
-        System.out.println(listCountries.get(0).getName());
+
+        //System.out.println(listCountries.get(0).getName());
         listCountries = sortCountries(listCountries);
-        System.out.println(listCountries.get(0).getName());
+        //System.out.println(listCountries.get(0).getName());
+
+        return listCountries;
+    }
+
+    public List<Country> getCountryStat(String countryName) throws CoronaVirusStatException {
+
+        JSONArray stats = httpConnectionService.HTTPConnection(countryName);
+
+        List<Province> listaProvinces = httpConnectionService.getGson()
+                .fromJson(stats.toString(),new TypeToken<List<Province>>(){}.getType());
+
+        HashMap<String, ArrayList<Integer>> countries=new HashMap<String, ArrayList<Integer>>();
+
+        for(Province p: listaProvinces){
+
+            if( !countries.containsKey(p.getCountry()) ){
+
+                ArrayList<Integer> temp = new ArrayList<Integer>();
+
+                temp.add(p.getDeaths());
+                temp.add(p.getConfirmed());
+                temp.add(p.getRecovered());
+
+                countries.put(p.getCountry(),temp);
+            }else{
+
+                ArrayList<Integer> aux = new ArrayList<Integer>();
+                ArrayList<Integer> temp = countries.get(p.getCountry());
+
+                countries.remove(p.getCountry());
+                aux.add(temp.get(0)+p.getDeaths());
+                aux.add(temp.get(1)+p.getConfirmed());
+                aux.add(temp.get(2)+p.getRecovered());
+
+                countries.put(p.getCountry(),aux);
+            }
+        }
+
+        List<Country> listCountries = new ArrayList<Country>();
+
+
+        for (HashMap.Entry<String, ArrayList<Integer>> entry : countries.entrySet()) {
+            listCountries.add(new Country(entry.getKey(),entry.getValue().get(0),entry.getValue().get(1),entry.getValue().get(2)));
+        }
 
         return listCountries;
     }
