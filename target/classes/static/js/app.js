@@ -1,10 +1,18 @@
 
 var app = ( function() {
-	function mostrarTabla(){
+
+	function topCountries() {
        
 	    $('#table tbody').empty();	    
 		apiclient.getCountries();
 	}
+
+	function  allCountries() {
+		console.log("all countries");
+		$('#table tbody').empty();
+		apiclient.getAllCountries();
+	}
+
 	
 	function createTable(countries){
 		var fila =$('#countriesRow');
@@ -22,7 +30,8 @@ var app = ( function() {
 		apiclient.getCountry(country);
 	}
 	return {
-		mostrarTabla:mostrarTabla,
+		topCountries:topCountries,
+		allCountries:allCountries,
 		mostrarCountry:mostrarCountry,
 		createTable:createTable
 	}
@@ -30,4 +39,4 @@ var app = ( function() {
 	
 })();
 
-app.mostrarTabla();
+app.topCountries();

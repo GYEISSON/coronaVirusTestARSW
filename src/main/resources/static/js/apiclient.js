@@ -7,6 +7,14 @@ var apiclient = ( function (){
 		.then(response => app.createTable(response.data))
 		.catch(error => console.log(error));
 	}
+	function getAllCountries() {
+		axios({
+			method:"get",
+			url: "/covid19/all-stats"
+		})
+			.then(response => app.createTable(response.data))
+			.catch(error => console.log(error));
+	}
 	function getCountry(country) {
 		console.log(country);
 		axios({
@@ -18,6 +26,7 @@ var apiclient = ( function (){
 	}
 	return {
 		getCountries:getCountries,
+		getAllCountries:getAllCountries,
 		getCountry:getCountry
 	}	
 })();
