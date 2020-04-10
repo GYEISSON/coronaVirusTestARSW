@@ -29,7 +29,7 @@ public class CoronaVirusStatController {
     @RequestMapping(value="/general-stats",method = RequestMethod.GET)
     public ResponseEntity<?> getGeneralStats() {
         try{
-            List<Country> countries = coronaVirusStatServices.getGeneralStats();
+            List<Country> countries = coronaVirusStatServices.getTopStats();
             return new ResponseEntity<>(countries, HttpStatus.OK);
         }
         catch (CoronaVirusStatException covid){
@@ -42,7 +42,7 @@ public class CoronaVirusStatController {
     public ResponseEntity<?> getCountryStat(@PathVariable ("country") String countryName){
         try{
             //System.out.println(countryName);
-            List<Country> country = coronaVirusStatServices.getCountryStat(countryName);
+            List<Country> country = coronaVirusStatServices.getCountryStats(countryName);
             //System.out.println(country.size());
             return new ResponseEntity<>(country, HttpStatus.OK);
         }catch (CoronaVirusStatException covid){

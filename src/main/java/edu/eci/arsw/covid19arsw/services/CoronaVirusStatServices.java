@@ -22,96 +22,61 @@ public class CoronaVirusStatServices {
     HttpConnectionService httpConnectionService=null;
 
 
-    public List<Country> getGeneralStats() throws CoronaVirusStatException {
-
+    public List<Country> getAllGeneralStats() throws CoronaVirusStatException {
         JSONArray stats = httpConnectionService.HTTPConnection("");
-
         List<Province> listaProvinces = httpConnectionService.getGson()
         													.fromJson(stats.toString(),new TypeToken<List<Province>>(){}.getType());
 
-        HashMap<String, ArrayList<Integer>> countries=new HashMap<String, ArrayList<Integer>>();
-        
-        for(Province p: listaProvinces){
-
-        	if( !countries.containsKey(p.getCountry()) ){
-                
-            	ArrayList<Integer> temp = new ArrayList<Integer>();
-            	
-                temp.add(p.getDeaths());
-                temp.add(p.getConfirmed());
-                temp.add(p.getRecovered());
-                
-                countries.put(p.getCountry(),temp);
-            }else{
-
-            	ArrayList<Integer> aux = new ArrayList<Integer>();
-                ArrayList<Integer> temp = countries.get(p.getCountry());
-                
-                countries.remove(p.getCountry());
-                aux.add(temp.get(0)+p.getDeaths());
-                aux.add(temp.get(1)+p.getConfirmed());
-                aux.add(temp.get(2)+p.getRecovered());
-                
-                countries.put(p.getCountry(),aux);
-            }
-        }
-        
+        HashMap<String, ArrayList<Integer>> countries= fillMap(listaProvinces);
         List<Country> listCountries = new ArrayList<Country>();
-
-
         for (HashMap.Entry<String, ArrayList<Integer>> entry : countries.entrySet()) {
             listCountries.add(new Country(entry.getKey(),entry.getValue().get(0),entry.getValue().get(1),entry.getValue().get(2)));
         }
-
-        //System.out.println(listCountries.get(0).getName());
         listCountries = sortCountries(listCountries);
-        //System.out.println(listCountries.get(0).getName());
+        return listCountries;
+    }
+    public List<Country> getTopStats() throws CoronaVirusStatException{
+        List<Country> countries = getAllGeneralStats();
+        return countries.subList(0,5);
+    }
 
+    public List<Country> getCountryStats(String countryName) throws CoronaVirusStatException {
+        JSONArray stats = httpConnectionService.HTTPConnection(countryName);
+        List<Province> listaProvinces = httpConnectionService.getGson()
+                .fromJson(stats.toString(),new TypeToken<List<Province>>(){}.getType());
+        HashMap<String, ArrayList<Integer>> countries= fillMap(listaProvinces);
+
+
+        List<Country> listCountries = new ArrayList<Country>();
+
+        for (HashMap.Entry<String, ArrayList<Integer>> entry : countries.entrySet()) {
+            if(entry.getKey().toLowerCase().equals(countryName.toLowerCase())) {
+                listCountries.add(new Country(entry.getKey(), entry.getValue().get(0), entry.getValue().get(1), entry.getValue().get(2)));
+            }
+        }
         return listCountries;
     }
 
-    public List<Country> getCountryStat(String countryName) throws CoronaVirusStatException {
-
-        JSONArray stats = httpConnectionService.HTTPConnection(countryName);
-
-        List<Province> listaProvinces = httpConnectionService.getGson()
-                .fromJson(stats.toString(),new TypeToken<List<Province>>(){}.getType());
-
+    private HashMap<String,ArrayList<Integer>> fillMap(List<Province> provinces){
         HashMap<String, ArrayList<Integer>> countries=new HashMap<String, ArrayList<Integer>>();
-
-        for(Province p: listaProvinces){
-
-            if( !countries.containsKey(p.getCountry()) ){
-
-                ArrayList<Integer> temp = new ArrayList<Integer>();
-
-                temp.add(p.getDeaths());
-                temp.add(p.getConfirmed());
-                temp.add(p.getRecovered());
-
-                countries.put(p.getCountry(),temp);
+        for(Province p: provinces){
+            ArrayList<Integer> tempArray = new ArrayList<Integer>();
+            if(!countries.containsKey(p.getCountry())){
+                tempArray.add(p.getDeaths());
+                tempArray.add(p.getConfirmed());
+                tempArray.add(p.getRecovered());
+                countries.put(p.getCountry(),tempArray);
             }else{
-
                 ArrayList<Integer> aux = new ArrayList<Integer>();
-                ArrayList<Integer> temp = countries.get(p.getCountry());
-
+                tempArray = countries.get(p.getCountry());
                 countries.remove(p.getCountry());
-                aux.add(temp.get(0)+p.getDeaths());
-                aux.add(temp.get(1)+p.getConfirmed());
-                aux.add(temp.get(2)+p.getRecovered());
-
+                aux.add(tempArray.get(0)+p.getDeaths());
+                aux.add(tempArray.get(1)+p.getConfirmed());
+                aux.add(tempArray.get(2)+p.getRecovered());
                 countries.put(p.getCountry(),aux);
             }
         }
-
-        List<Country> listCountries = new ArrayList<Country>();
-
-
-        for (HashMap.Entry<String, ArrayList<Integer>> entry : countries.entrySet()) {
-            listCountries.add(new Country(entry.getKey(),entry.getValue().get(0),entry.getValue().get(1),entry.getValue().get(2)));
-        }
-
-        return listCountries;
+        return countries;
     }
 
     private List<Country> sortCountries( List<Country> countries){
