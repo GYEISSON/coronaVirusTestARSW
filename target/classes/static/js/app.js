@@ -29,10 +29,18 @@ var app = ( function() {
 		$('#table tbody').empty();
 		apiclient.getCountry(country);
 	}
+
+	function totalStatistics() {
+		console.log("total estadisticas");
+		$('#table tbody').empty();
+		apiclient.getTotalStatistics();
+	}
+
 	return {
 		topCountries:topCountries,
 		allCountries:allCountries,
 		mostrarCountry:mostrarCountry,
+		totalStatistics:totalStatistics,
 		createTable:createTable
 	}
 		

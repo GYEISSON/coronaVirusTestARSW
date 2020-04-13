@@ -37,6 +37,16 @@ public class CoronaVirusStatController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @RequestMapping(value = "/total-statistics",method = RequestMethod.GET)
+    public ResponseEntity<?> getTotalStatistics() {
+            try{
+                List<Country> total = coronaVirusStatServices.getTotalStatistics();
+                return new ResponseEntity<>(total, HttpStatus.OK);
+            }catch (CoronaVirusStatException covid){
+                Logger.getLogger(Covid.class.getName()).log(Level.SEVERE, null, covid.noSeEncontraronDatos);
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+    }
     @RequestMapping(value = "/all-stats",method = RequestMethod.GET)
     public ResponseEntity<?> getAllStats(){
         try{

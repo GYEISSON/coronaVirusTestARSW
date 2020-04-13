@@ -24,9 +24,19 @@ var apiclient = ( function (){
 		.then(response => app.createTable(response.data))
 		.catch(error => console.log(error));
 	}
+
+	function getTotalStatistics() {
+		axios({
+			method:"get",
+			url: "/covid19/total-statistics"
+		})
+			.then(response => app.createTable(response.data))
+			.catch(error => console.log(error));
+	}
 	return {
 		getCountries:getCountries,
 		getAllCountries:getAllCountries,
-		getCountry:getCountry
+		getCountry:getCountry,
+		getTotalStatistics:getTotalStatistics
 	}	
 })();

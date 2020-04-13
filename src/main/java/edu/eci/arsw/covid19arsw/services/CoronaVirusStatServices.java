@@ -40,6 +40,19 @@ public class CoronaVirusStatServices {
         return countries.subList(0,5);
     }
 
+    public List<Country> getTotalStatistics() throws CoronaVirusStatException {
+        List<Country> countries = getAllGeneralStats();
+        List<Country> totalList = new ArrayList<Country>();
+        Country totalCountry = new Country("Total",0,0,0);
+        for(Country c :countries){
+            totalCountry.setConfirmed( totalCountry.getConfirmed() + c.getConfirmed());
+            totalCountry.setCured(totalCountry.getRecovered() + c.getRecovered());
+            totalCountry.setDeaths(totalCountry.getDeaths() + c.getDeaths());
+        }
+        totalList.add(totalCountry);
+        return totalList;
+    }
+
     public List<Country> getCountryStats(String countryName) throws CoronaVirusStatException {
         JSONArray stats = httpConnectionService.HTTPConnection(countryName);
         List<Province> listaProvinces = httpConnectionService.getGson()
