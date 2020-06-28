@@ -17,7 +17,7 @@ import org.json.JSONArray;
 @Service
 @Configuration
 public class CoronaVirusStatServices {
-    
+
 	@Autowired
     HttpConnectionService httpConnectionService=null;
 
@@ -37,7 +37,7 @@ public class CoronaVirusStatServices {
     }
     public List<Country> getTopStats() throws CoronaVirusStatException{
         List<Country> countries = getAllGeneralStats();
-        return countries.subList(0,5);
+        return countries.subList(0,10);
     }
 
     public List<Country> getTotalStatistics() throws CoronaVirusStatException {
