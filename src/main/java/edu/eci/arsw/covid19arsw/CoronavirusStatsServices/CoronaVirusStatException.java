@@ -1,4 +1,4 @@
-package edu.eci.arsw.covid19arsw.services;
+package edu.eci.arsw.covid19arsw.CoronavirusStatsServices;
 
 public class CoronaVirusStatException extends Exception{
 	

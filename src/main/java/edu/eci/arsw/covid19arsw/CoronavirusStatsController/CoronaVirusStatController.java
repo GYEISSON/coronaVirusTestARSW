@@ -1,10 +1,10 @@
-package edu.eci.arsw.covid19arsw.controller;
+package edu.eci.arsw.covid19arsw.CoronavirusStatsController;
 
 
 import edu.eci.arsw.covid19arsw.Covid;
-import edu.eci.arsw.covid19arsw.model.Country;
-import edu.eci.arsw.covid19arsw.services.CoronaVirusStatException;
-import edu.eci.arsw.covid19arsw.services.CoronaVirusStatServices;
+import edu.eci.arsw.covid19arsw.CoronavirusStatsModel.Country;
+import edu.eci.arsw.covid19arsw.CoronavirusStatsServices.CoronaVirusStatException;
+import edu.eci.arsw.covid19arsw.CoronavirusStatsServices.CoronaVirusStatServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

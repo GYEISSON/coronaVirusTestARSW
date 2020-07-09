@@ -1,4 +1,4 @@
-package edu.eci.arsw.covid19arsw.services;
+package edu.eci.arsw.covid19arsw.HttpConnectionService;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -25,7 +25,12 @@ public class HttpConnectionService {
         headerKeyValue = "9077e18e69mshd0c95d063e40146p183591jsn9f9008035e02";
         setGson(new GsonBuilder().create());
     }
-    
+
+    /**
+     *
+     * @param name
+     * @return
+     */
     public JSONArray HTTPConnection(String name){
 
         String encodedUrlName = null;

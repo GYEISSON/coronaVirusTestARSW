@@ -1,4 +1,4 @@
-package edu.eci.arsw.covid19arsw.model;
+package edu.eci.arsw.covid19arsw.CoronavirusStatsModel;
 
 public class Province {
     private String city;
