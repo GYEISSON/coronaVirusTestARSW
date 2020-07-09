@@ -15,10 +15,11 @@ var app = ( function() {
 
 
 	function createTable(countries){
+		var ind = 0;
 		var fila =$('#countriesRow');
 		countries.map( function(element){
 			//console.log(element);
-			var markup = "<tr> <td>"+ element.name +"</td> <td>"+beautifulNumber(element.deaths)+"</td> <td>"+ beautifulNumber(element.confirmed) +"</td> <td>"+ beautifulNumber(element.recovered) +"</td> </tr>";
+			var markup = "<tr> <td>"+ ++ind +"</td> <td>"+ element.name +"</td> <td>"+beautifulNumber(element.deaths)+"</td> <td>"+ beautifulNumber(element.confirmed) +"</td> <td>"+ beautifulNumber(element.recovered) +"</td> </tr>";
 			fila.append(markup);
 
 		});
@@ -41,22 +42,16 @@ var app = ( function() {
 		var newNumber = "";
 		const size = number.length - 1;
 		var coma=",";
-		console.log("length number"+ number.length)
 		var contador = 0;
 		for(i = size ; i>=0; i--){
 			if( contador>0 && contador%3==0){
 				newNumber = coma.concat(newNumber);
-				console.log(newNumber+" coma number");
 				coma = ",";
-
 			}
 			newNumber = number.substring(i,i+1).concat(newNumber);
-			console.log(newNumber);
 			contador++;
 		}
-		console.log(newNumber);
 		return newNumber;
-
 	}
 
 	return {
