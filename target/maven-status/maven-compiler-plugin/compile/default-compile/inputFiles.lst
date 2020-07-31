@@ -1,7 +1,8 @@
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\services\CoronaVirusStatException.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\services\CoronaVirusStatServices.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\services\HttpConnectionService.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\model\Province.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\model\Country.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\controller\CoronaVirusStatController.java
+C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsModel\Country.java
+C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsModel\Province.java
+C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatException.java
+C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatServices.java
+C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsCache\CoronavirusStatsCache.java
 C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\Covid.java
+C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\HttpConnectionService\HttpConnectionService.java
+C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsController\CoronaVirusStatController.java

@@ -35,8 +35,10 @@ public class CoronavirusStatsCache {
     }
 
     public List<Country> getCountry(String name) throws CoronaVirusStatException{
+        
         responseList.clear();
         responseList.add(littleData.get(name));
+
         return responseList;
     }
 

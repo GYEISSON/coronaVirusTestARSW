@@ -24,12 +24,44 @@ public class CoronaVirusStatServices {
     @Autowired
     CoronavirusStatsCache cache =null;
 
+
+    Timer timer = new Timer();
+
+    TimerTask tarea = new TimerTask() {
+        @Override
+        public void run() {
+            updateStats();
+            System.out.println("data updated!");
+        }
+    };
+
+    /**
+     *
+     * @throws CoronaVirusStatException
+     * update the cache
+     */
+    public void updateStats(){
+        List<Country> listCountries = new ArrayList<Country>();
+        JSONArray stats = httpConnectionService.HTTPConnection("");
+        List<Province> listaProvinces = httpConnectionService.getGson()
+                .fromJson(stats.toString (), new TypeToken<List<Province>>() {
+                }.getType());
+
+        HashMap<String, ArrayList<Integer>> countries = fillMap(listaProvinces);
+
+        for (HashMap.Entry<String, ArrayList<Integer>> entry : countries.entrySet()) {
+            listCountries.add(new Country(entry.getKey(), entry.getValue().get(0), entry.getValue().get(1), entry.getValue().get(2)));
+        }
+        cache.setLittleData(listCountries);
+    }
+
     public List<Country> getAllGeneralStats() throws CoronaVirusStatException {
         List<Country> listCountries = new ArrayList<Country>();
         if(cache.getCharged()){
             listCountries = cache.getAllData();
         }
         else {
+            timer.schedule(tarea,0,300000);
             JSONArray stats = httpConnectionService.HTTPConnection("");
             List<Province> listaProvinces = httpConnectionService.getGson()
                     .fromJson(stats.toString (), new TypeToken<List<Province>>() {

@@ -11,6 +11,7 @@ public class Country implements Comparable {
         this.setConfirmed(confirmed);
         this.setDeaths(deaths);
         this.setRecovered(recovered);
+
     }
 
     public String getName() {

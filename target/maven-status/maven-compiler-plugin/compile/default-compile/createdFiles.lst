@@ -2,8 +2,10 @@ edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatException.class
 edu\eci\arsw\covid19arsw\HttpConnectionService\HttpConnectionService.class
 edu\eci\arsw\covid19arsw\CoronavirusStatsCache\CoronavirusStatsCache.class
 edu\eci\arsw\covid19arsw\CoronavirusStatsModel\Province.class
+edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatServices$4.class
 edu\eci\arsw\covid19arsw\CoronavirusStatsModel\Country.class
 edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatServices$2.class
+edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatServices$3.class
 edu\eci\arsw\covid19arsw\CoronavirusStatsController\CoronaVirusStatController.class
 edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatServices$1.class
 edu\eci\arsw\covid19arsw\Covid.class
