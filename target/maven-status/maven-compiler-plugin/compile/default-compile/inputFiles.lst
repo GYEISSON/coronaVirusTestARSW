@@ -1,8 +1,9 @@
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsModel\Country.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsModel\Province.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatException.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsServices\CoronaVirusStatServices.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsCache\CoronavirusStatsCache.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\Covid.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\HttpConnectionService\HttpConnectionService.java
-C:\Users\USER\Documents\u\2020-1\arsw\Tests\coronaVirusTest\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\CoronavirusStatsController\CoronaVirusStatController.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\coronaVirusStatsServices\CoronaVirusStatException.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\coronaVirusStatsServices\CoronaVirusStatsServices.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\coronaVirusStatsModel\Province.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\coronaVirusStatsServices\implement\CoronaVirusStatServicesImplement.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\Covid.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\coronaVirusStatsCache\CoronavirusStatsCache.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\httpConnectionService\HttpConnectionService.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\coronaVirusStatsModel\Country.java
+C:\Users\yeiso\OneDrive\Documentos\personal\Covid19\coronaVirusTestARSW\src\main\java\edu\eci\arsw\covid19arsw\coronaVirusStatsController\CoronaVirusStatController.java
